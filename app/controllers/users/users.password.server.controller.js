@@ -55,13 +55,14 @@ exports.forgot = function(req, res, next) {
 			}
 		},
 		function(token, user, done) {
-			res.render('templates/reset-password-email', {
-				name: user.displayName,
-				appName: config.app.title,
-				url: 'http://' + req.headers.host + '/auth/reset/' + token
-			}, function(err, emailHTML) {
-				done(err, emailHTML, user);
-			});
+			res.json({error: 'Not implemented yet.'});
+			// res.render('templates/reset-password-email', {
+			// 	name: user.displayName,
+			// 	appName: config.app.title,
+			// 	url: 'http://' + req.headers.host + '/auth/reset/' + token
+			// }, function(err, emailHTML) {
+			// 	done(err, emailHTML, user);
+			// });
 		},
 		// If valid email, send reset email using service
 		function(emailHTML, user, done) {
@@ -158,12 +159,14 @@ exports.reset = function(req, res, next) {
 			});
 		},
 		function(user, done) {
-			res.render('templates/reset-password-confirm-email', {
-				name: user.displayName,
-				appName: config.app.title
-			}, function(err, emailHTML) {
-				done(err, emailHTML, user);
-			});
+			res.json({error: 'Not implemented yet.'});
+
+			// res.render('templates/reset-password-confirm-email', {
+			// 	name: user.displayName,
+			// 	appName: config.app.title
+			// }, function(err, emailHTML) {
+			// 	done(err, emailHTML, user);
+			// });
 		},
 		// If valid email, send reset email using service
 		function(emailHTML, user, done) {
